@@ -1,11 +1,11 @@
 const {addUser, getUser} = require('../controller/user')
 
-export const routes = {
-    [`/${process.env.environment}/addUser`]:{
+exports.routes = {
+    [`/addUser`]:{
         POST: addUser,
     
     },
-    [`/${process.env.environment}/getUser`]:{
+    [`/getUser`]:{
         GET: getUser,
     },
 }

@@ -1,6 +1,6 @@
 
 const { headers }=require('../constant/header.js')
-export const apiResponseBody = (statusCode, message,data) => {
+exports.apiResponseBody = (statusCode, message,data) => {
     return {
         statusCode,
         headers,

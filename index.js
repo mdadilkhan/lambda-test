@@ -2,7 +2,7 @@ const {connectDB} =require('./src/utility/mongoDBClient.js')
 const {apiResponseBody} =require('./src/utility/apiResponseBody.js')
 const {routes}=require('./src/routes/routes.js')
 
-export const handler = async (event, context) => {
+exports.handler = async (event, context) => {
     console.log(event);
     context.callbackWaitsForEmptyEventLoop = false;
     await connectDB();
@@ -12,6 +12,7 @@ export const handler = async (event, context) => {
 
     const {httpMethod , path} = event;
     const route = routes[path];
+    console.log("route",route)
 
     if(!route?.[httpMethod]){
         return apiResponseBody(404, 'Not found');
