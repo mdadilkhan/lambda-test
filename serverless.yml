@@ -11,6 +11,12 @@ functions:
   api:
     handler: index.handler
     events:
-      - httpApi:
+      - http:
           path: /
-          method: ANY
+          method: get
+          cors: true
+
+      - http:
+          path: /{proxy}
+          method: any
+          cors: true

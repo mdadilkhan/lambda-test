@@ -1,11 +1,23 @@
-const {addUser, getUser} = require('../controller/user')
+const {addUser, getUser, login,image,addUserProfile, bulkUpload} = require('../controller/user')
 
-export const routes = {
-    [`/${process.env.environment}/addUser`]:{
+exports.routes = {
+    [`/addUser`]:{
         POST: addUser,
-    
     },
-    [`/${process.env.environment}/getUser`]:{
+    [`/getUser`]:{
         GET: getUser,
     },
+    [`/login`]:{
+        GET: login,
+    },
+    ['/image-url']:{
+        GET:image
+    },
+    ['/addUserProfile']:{
+        POST:addUserProfile
+    },
+    ['/bulkUpload']:{
+        POST:bulkUpload
+    }
+
 }
